@@ -26,7 +26,7 @@ SELECT
     l.host_id,
     h.host_name,
     h.is_superhost as host_is_superhost,
-    l.created_at,
+    -- l.created_at, remove to have 9 columns TODO: fix 
     GREATEST(l.updated_at, h.updated_at) as updated_at
 FROM l
 LEFT JOIN h ON (h.host_id = l.host_id)
